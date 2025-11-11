@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>'Spotify - Web Player: Music for everyone'</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="utility.css" />
+    <link rel="icon" href="favicon.svg">
+  </head>
+  <body>
+    <div class="hero flex">
+      <div class="side-bar">
+        <div class="left one">
+          <img src="logo.svg" alt="logo" class="logo invert" />
+          <img src="cross.svg" alt="" class="cross">
+          <ul>
+            <li id="home"><img src="home.svg" alt="home" class="home invert" />Home</li>
+            <li id="search">
+              <img src="search.svg" alt="search" class="search invert" />Search
+            </li>
+          </ul>
+        </div>
+
+        <div class="left two">
+          <div class="lib flex">
+            <div>
+              <img
+                src="library.svg"
+                alt="library"
+                width="25px"
+                class="invert"
+              />
+            </div>
+            <p>Your library</p>
+            <div>
+              <img src="plus.svg" alt="plus" width="25px" class="add invert" />
+            </div>
+          </div>
+          
+<!--song list of library -->
+
+          <!-- song list -->
+            <div class="songs">
+              <ul>
+                  <!-- we will dynamically enter the song name -->
+                <!-- <li>
+                  <img src="music.svg" alt="">
+                  <div class="song-info">
+                    <div>Song name</div>
+                    <div>Artist name</div>
+                  </div>
+                  <div class="play-now">
+                    <div>play now <img src="play.svg" alt="" style="filter: invert(1);">
+                    </div>
+                  </div>
+                </li> -->
+
+              </ul>
+            </div>
+
+          <div class="common">
+            <div class="playlist">
+              <p class="first-line">Create your first Playlist</p>
+              <p class="sec-line">It's easy, we'll help you</p>
+              <button>Create playlist</button>
+            </div>
+  
+            <div class="playlist">
+              <p class="first-line">Let's find some podcasts to follow</p>
+              <p class="sec-line">we'll keep you updated on new episodes</p>
+              <button>Browse podcasts</button>
+            </div>
+          </div>
+
+          <div class="separation"></div>
+
+          <div class="list">
+            <div class="point">
+              <a href="https://www.spotify.com/in-en/legal/">
+                <span>Legal</span>
+              </a>
+            </div>
+            <div class="point">
+              <a href="https://www.spotify.com/in-en/safetyandprivacy/">
+                <span>Safety & Privacy Center</span>
+              </a>
+            </div>
+            <div class="point">
+              <a href="https://www.spotify.com/in-en/legal/privacy-policy/">
+                <span>Privacy Policy</span>
+              </a>
+            </div>
+            <div class="point">
+              <a href="https://www.spotify.com/in-en/legal/cookies-policy/">
+                <span>Cookies</span>
+              </a>
+            </div>
+            <div class="point">
+              <a href="https://www.spotify.com/in-en/legal/privacy-policy/#s3">
+                <span>About Ads</span>
+              </a>
+            </div>
+            <div class="point">
+              <a href="https://www.spotify.com/in-en/accessibility/">
+                <span>Accessibility</span>
+              </a>
+            </div>
+          </div>
+
+          <button class="lang-btn flex">
+            <img src="lang.svg" alt="language" class="invert" />English
+          </button>
+        </div>
+
+
+      </div>
+
+
+<!-- main html code  -->
+      <div class="main">
+        <div class="top">
+          <img src="hamburger.svg" alt="" class="hamburger" width="35px">
+          <div class="arrow">
+            <div class="side"><img src="left_arrow.svg" alt=""></div>
+            <div class="side"><img src="right_arrow.svg" alt=""></div>
+          </div>
+
+          <div class="btn">
+            <button class="sign-in">Sign in</button>
+            <button class="log-in">log in</button>
+          </div>
+        </div>
+
+        <div class="right">
+          <div class="artist">
+            <div><h3>Popular Artists</h3></div>
+            <div><p>Show all</p></div>
+          </div>
+
+          <div class="singers">
+            <div class="name">
+              <img
+                src="https://lh3.googleusercontent.com/sjGMYJQ1J3FZEIBsMYUztMjjYOM4-NJ24CjmIHqxTWCxAM1YgjL-d_17u7_PRhTouOwwAjbu-2x5S6I=w2880-h1200-p-l90-rj"
+                alt="pritam"
+              />
+              <div class="play"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="50" height="50" fill="none">
+                <!-- Circular background -->
+                <circle cx="12" cy="12" r="12" fill="#1cd45f"/>
+            
+                <!-- Centered play button icon -->
+                <path d="M9 8l7 4-7 4V8z" stroke="black" fill="black" stroke-width="1.5" stroke-linejoin="round" />
+            </svg></div>
+              <h3>Pritam</h3>
+              <p>Artist</p>
+            </div>
+
+
+            <div class="name">
+              <img
+                src="https://bookingagentinfo.com/wp-content/uploads/2023/12/ab6761610000e5eb0261696c5df3be99da6ed3f3.jpg"
+                alt="pritam"
+              />
+              <div class="play"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="50" height="50" fill="none">
+                <!-- Circular background -->
+                <circle cx="12" cy="12" r="12" fill="#1cd45f"/>
+            
+                <!-- Centered play button icon -->
+                <path d="M9 8l7 4-7 4V8z" stroke="black" fill="black" stroke-width="1.5" stroke-linejoin="round" />
+            </svg></div>
+              <h3>Arijit Singh</h3>
+              <p>Artist</p>
+            </div>
+
+
+            <div class="name">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROrCj-tIOm-ZeElYA8z-PNol_YszpRmk4INw&s"
+                alt="pritam"
+              />
+              <div class="play"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="50" height="50" fill="none">
+                <!-- Circular background -->
+                <circle cx="12" cy="12" r="12" fill="#1cd45f"/>
+            
+                <!-- Centered play button icon -->
+                <path d="M9 8l7 4-7 4V8z" stroke="black" fill="black" stroke-width="1.5" stroke-linejoin="round" />
+            </svg></div>
+              <h3>A.R. Rahman</h3>
+              <p>Artist</p>
+            </div>
+
+
+            <div class="name">
+              <img
+                src="https://bookingagentinfo.com/wp-content/uploads/2024/03/ab6761610000e5eba038d7d87f8577bbb9686bd3.jpg"
+                alt="pritam"
+              />
+              <div class="play"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="50" height="50" fill="none">
+                <!-- Circular background -->
+                <circle cx="12" cy="12" r="12" fill="#1cd45f"/>
+            
+                <!-- Centered play button icon -->
+                <path d="M9 8l7 4-7 4V8z" stroke="black" fill="black" stroke-width="1.5" stroke-linejoin="round" />
+            </svg></div>
+              <h3>Sachin jigar</h3>
+              <p>Artist</p>
+            </div>
+
+
+            <div class="name">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1nRKcRVPqjhPZ1PWPIzViiXB-k2Tk5Zw7ww&s"
+                alt="pritam"
+              />
+              <div class="play"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="50" height="50" fill="none">
+                <!-- Circular background -->
+                <circle cx="12" cy="12" r="12" fill="#1cd45f"/>
+            
+                <!-- Centered play button icon -->
+                <path d="M9 8l7 4-7 4V8z" stroke="black" fill="black" stroke-width="1.5" stroke-linejoin="round" />
+            </svg></div>
+              <h3>Anirudh Ravichander</h3>
+              <p>Artist</p>
+            </div>
+          </div>
+
+<!-- second row -->
+          <div class="artist">
+              <div><h3>Popular albums</h3></div>
+              <div><p>Show all</p></div>
+            </div>
+
+            <div class="albums">
+                <div class="song">
+                  <img
+                    src="https://i.scdn.co/image/ab67616d00001e026404721c1943d5069f0805f3"
+                    alt="pritam"
+                  />
+                  <div class="play"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="50" height="50" fill="none">
+                    <!-- Circular background -->
+                    <circle cx="12" cy="12" r="12" fill="#1cd45f"/>
+                
+                    <!-- Centered play button icon -->
+                    <path d="M9 8l7 4-7 4V8z" stroke="black" fill="black" stroke-width="1.5" stroke-linejoin="round" />
+                </svg></div>
+                  <h3>Aashiqui 2</h3>
+                  <p>Artist</p>
+                </div>
+
+
+                <div class="song">
+                  <img
+                    src="https://i.scdn.co/image/ab67616d00001e029bb2d30b01ac2cada8a8ad03"
+                    alt="pritam"
+                  />
+                  <div class="play"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="50" height="50" fill="none">
+                    <!-- Circular background -->
+                    <circle cx="12" cy="12" r="12" fill="#1cd45f"/>
+                
+                    <!-- Centered play button icon -->
+                    <path d="M9 8l7 4-7 4V8z" stroke="black" fill="black" stroke-width="1.5" stroke-linejoin="round" />
+                </svg></div>
+                  <h3>Ek tha raja</h3>
+                  <p>Artist</p>
+                </div>
+
+
+                <div class="song">
+                  <img
+                    src="https://i.scdn.co/image/ab67616d00001e025f3ede47954a93aa03efe5f9"
+                  /><div class="play"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="50" height="50" fill="none">
+                    <!-- Circular background -->
+                    <circle cx="12" cy="12" r="12" fill="#1cd45f"/>
+                
+                    <!-- Centered play button icon -->
+                    <path d="M9 8l7 4-7 4V8z" stroke="black" fill="black" stroke-width="1.5" stroke-linejoin="round" />
+                </svg></div>
+                  <h3>Animal</h3>
+                  <p>Artist</p>
+                </div>
+
+
+                <div class="song">
+                  <img
+                    src="https://i.scdn.co/image/ab67616d00001e02d5f4378b1ffc9119fdc7306d"
+                  />
+                  <div class="play"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="50" height="50" fill="none">
+                    <!-- Circular background -->
+                    <circle cx="12" cy="12" r="12" fill="#1cd45f"/>
+                
+                    <!-- Centered play button icon -->
+                    <path d="M9 8l7 4-7 4V8z" stroke="black" fill="black" stroke-width="1.5" stroke-linejoin="round" />
+                </svg></div>
+                  <h3>Sajni</h3>
+                  <p>Artist</p>
+                </div>
+                <div class="song">
+                  <img
+                    src="https://i.scdn.co/image/ab67616d00001e02d5f4378b1ffc9119fdc7306d"
+                  />
+                  <div class="play"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="50" height="50" fill="none">
+                    <!-- Circular background -->
+                    <circle cx="12" cy="12" r="12" fill="#1cd45f"/>
+                
+                    <!-- Centered play button icon -->
+                    <path d="M9 8l7 4-7 4V8z" stroke="black" fill="black" stroke-width="1.5" stroke-linejoin="round" />
+                </svg></div>
+                  <h3>Sajni</h3>
+                  <p>Artist</p>
+                </div>
+
+
+                <div class="song">
+                  <img
+                    src="https://i.scdn.co/image/ab67616d00001e021d1cc2e40d533d7bcebf5dae"
+                  />
+                  <div class="play"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="50" height="50" fill="none">
+                    <!-- Circular background -->
+                    <circle cx="12" cy="12" r="12" fill="#1cd45f"/>
+                
+                    <!-- Centered play button icon -->
+                    <path d="M9 8l7 4-7 4V8z" stroke="black" fill="black" stroke-width="1.5" stroke-linejoin="round" />
+                </svg></div>
+                  <h3>Anirudh Ravichander</h3>
+                  <p>Artist</p>
+                </div>
+              </div>
+
+
+
+<!-- playbar -->
+        <div class="playbar">
+          <div class="seekbar">
+            <div class="circle">
+            </div>
+          </div>
+          
+          <div class="songinfo">
+          </div>
+
+          <div class="songbutton">
+            <img width="30" id="previous" src="previewsong.svg" alt="">
+            <img width="30" id="play" src="play.svg" alt="">
+            <img width="30" id="next" src="forwardsong.svg" alt="">
+          </div>
+
+          <div class="vol-and-time">
+            <div class="songtime"> 
+            </div>
+            <div class="volume">
+              <img src="volume.svg" alt="" class="volBtn">
+              <img src="muteVol.svg" alt="" class="muteVol">
+              <div class="range">
+                <input type="range" name="volume" id="volRanging">
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+
+
+        </div>
+
+      
+
+            
+
+
+  
+
+      
+      
+      
+      
+
+
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
