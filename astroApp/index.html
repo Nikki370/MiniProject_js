@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>myAstro - Unveil Your Cosmic Destiny</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <!-- HERO SECTION -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">myAstro By Nikita</h1>
+            <p class="hero-subtitle">Unveil Your Cosmic Destiny & Chart Your Path</p>
+            
+            <!-- Animated SVG -->
+            <div class="zodiac-wheel-container">
+                <svg class="zodiac-wheel" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Orbits -->
+                    <circle class="orbit" cx="100" cy="100" r="90" />
+                    <circle class="orbit" cx="100" cy="100" r="65" />
+                    <circle class="orbit" cx="100" cy="100" r="40" />
+                    
+                    <!-- Central Sun/Star -->
+                    <circle class="sun" cx="100" cy="100" r="20" />
+                    
+                    <!-- Moving Planets -->
+                    <g class="planet-orbit-1">
+                        <circle class="planet" cx="100" cy="10" r="5" />
+                    </g>
+                    <g class="planet-orbit-2">
+                        <circle class="planet planet2" cx="100" cy="35" r="7" />
+                    </g>
+                    <g class="planet-orbit-3">
+                        <circle class="planet planet3" cx="100" cy="60" r="4" />
+                    </g>
+                </svg>
+            </div>
+            <a href="#form-section" class="cta-button">Get Your Reading</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- FORM SECTION -->
+        <section id="form-section" class="form-container">
+            <h2>Chart Your Stars</h2>
+            <p>Enter your birth details to generate your personalized astrological reading.</p>
+            <form id="astro-form">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter you Name" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Date of Birth</label>
+                    <div class="dob-inputs">
+                        <input type="number" id="day" name="day" placeholder="Day" min="1" max="31" required>
+                        <select id="month" name="month" required>
+                            <option value="" disabled selected>Month</option>
+                            <option value="1">January</option>
+                            <option value="2">February</option>
+                            <option value="3">March</option>
+                            <option value="4">April</option>
+                            <option value="5">May</option>
+                            <option value="6">June</option>
+                            <option value="7">July</option>
+                            <option value="8">August</option>
+                            <option value="9">September</option>
+                            <option value="10">October</option>
+                            <option value="11">November</option>
+                            <option value="12">December</option>
+                        </select>
+                        <input type="number" id="year" name="year" placeholder="Year" min="1920" max="2023" required>
+                    </div>
+                </div>
+                
+                <button type="submit" class="submit-button">Reveal My Future</button>
+            </form>
+        </section>
+
+        <!-- PREDICTION SECTION (Initially Hidden) -->
+        <section id="prediction-section" class="prediction-container hidden">
+            <h2 id="prediction-title">Your Astrological Profile</h2>
+            <div class="prediction-grid">
+                <div class="prediction-card">
+                    <h3><span class="icon">✨</span> Your Zodiac Sign</h3>
+                    <p id="zodiac-sign-text">Your sign reveals your core personality and how you interact with the world.</p>
+                </div>
+                <div class="prediction-card">
+                    <h3><span class="icon">🌙</span> The Unseen Side of You </h3>
+                    <p id="love-text">Discover how the stars influence your romantic life and compatibility with others.</p>
+                </div>
+                <div class="prediction-card">
+                    <h3><span class="icon">💼</span> Career & Fortune</h3>
+                    <p id="career-text">Insights into your professional strengths and the best paths to success and abundance.</p>
+                </div>
+                <div class="prediction-card">
+                    <h3><span class="icon">🌿</span> Wellness & Health</h3>
+                    <p id="wellness-text">Astrological guidance on maintaining balance and well-being in mind, body, and spirit.</p>
+                </div>
+                <div class="prediction-card">
+                    <h3><span class="icon">💖</span> Love & Relationship</h3>
+                    <p id="your-love">Astrological guidance on maintaining balance and well-being in mind, body, and spirit.</p>
+                </div>
+                <div class="prediction-card">
+                    <h3><span class="icon">🌌</span> Currently, the Universe Says</h3>
+                    <p id="universe-text">Astrological guidance on maintaining balance and well-being in mind, body, and spirit.</p>
+                </div>
+            </div>
+             <button id="reset-button" class="submit-button secondary">Try Another Reading</button>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2025 myAstro. All rights reserved. Nikita Kumari</p>
+    </footer>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
