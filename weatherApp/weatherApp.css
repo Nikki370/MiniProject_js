@@ -1,0 +1,102 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg,#000000, #53008e, #9370DB);
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+    position: relative;
+}
+
+.glass-effect {
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    background: rgba(246, 246, 246, 0.1);
+    border-radius: 20px;
+    backdrop-filter: blur(50px);
+    border: 1px solid rgb(247, 246, 246, 0.8);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.glass-effect h2 {
+    text-align: center;
+    color: rgb(198, 173, 216);
+    margin-top: 40px;
+}
+
+.sun {
+    position: absolute;
+    top: 3%;
+    right: 4%;
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, #FFD700, #FF8C00);
+    border-radius: 50%;
+    box-shadow: 0 0 100px rgba(255, 204, 0, 0.6);
+}
+
+
+.container {
+    text-align: center;
+    z-index: 1;
+}
+
+.input-box {
+    position: relative;
+    width: 300px;
+    padding: 15px;
+    background: linear-gradient(145deg, rgba(58, 6, 96, 0.8), rgba(138, 43, 226, 0.8));
+    border-radius: 20px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5),
+                -5px -5px 15px rgba(255, 255, 255, 0.4);
+    perspective: 1000px;
+}
+
+input[type="text"] {
+    font-weight: bold;
+    /* color: rgb(85, 7, 142); */
+    color: rgb(204, 196, 206);
+    width: 80%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.2);
+    font-size: 16px;
+    text-align: center;
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
+}
+
+input[type="text"]::placeholder {
+    color: #310551;
+    font-style: bold;
+}
+
+#weather {
+    background-color: rgba(238, 236, 236, 0.5);
+    margin-top: 45px;
+    border-radius: 100px;
+    padding: 20px;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 13px;
+    color: rgb(75, 6, 75);
+    font-size: 18px;
+    display: hidden;
+    display: none;
+    box-shadow: 0px 0px 8px #4B0082;
+}
+
+
+
+
+
+
