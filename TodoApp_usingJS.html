@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TODO app</title>
+    <link rel="icon" href="https://www.svgrepo.com/show/504599/microsoft-todo.svg">
+    <style>
+      body {
+        background-image: url("https://i.pinimg.com/originals/ac/54/a1/ac54a128942c750799c2c1fe144d2467.jpg");
+      }
+      .box {
+        margin: auto;
+        width: 500px;
+        height: auto;
+        padding: 8px 30px 50px;
+        box-shadow: 0px 0px 5px;
+        border-radius: 4px;
+        background-color: rgb(247, 241, 252);
+      }
+
+      #task,
+      #date {
+        padding: 6px 12px;
+        border-radius: 5px;
+        border-color: rgb(231, 220, 241);
+      }
+      #date {
+        cursor: pointer;
+      }
+      .addTask {
+        padding: 8px 40px;
+        margin-left: 12px;
+        border-radius: 5px;
+        border: none;
+        background-color: rgb(179, 107, 247);
+        color: white;
+        cursor: pointer;
+        font-weight: bold;
+      }
+      .taskList {
+        border-bottom: 1px solid rgb(179, 107, 247);
+        padding-bottom: 10px;
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+      }
+      .taskLabel {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+      }
+      
+      .cross {
+        padding: 5px 10px;
+        border-radius: 5px;
+        border: none;
+        color: rgb(179, 107, 247);
+        font-weight: bold;
+        cursor: pointer;
+      }
+      .cross:hover {
+        background-color: rgb(179, 107, 247);
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="box">
+      <h1 style="text-align: center">TODO List!</h1>
+
+      <input type="text" id="task" placeholder="Add your task" />
+      <input type="date" id="date" />
+      <button class="addTask">Add Task</button>
+
+      <!-- <div class="taskList">
+        <div class="taskLabel">
+                <input type="checkbox">
+                <div class="newTask">nikita</div>
+            </div>
+
+            <div class="taskLabel">
+                <div class="newDate">date</div>
+                <button class="cross" onclick="taskDone()">Completed</button>
+            </div>
+    </div> -->
+
+  </body>
+
+  <script>
+    const box = document.querySelector(".box")
+    const addTaskBtn = document.querySelector(".addTask");
+    const taskList = document.querySelector(".taskList");
+
+    addTaskBtn.addEventListener("click", () => {
+      let taskValue = document.querySelector("#task").value;
+      let dateValue = document.querySelector("#date").value;
+
+      if (taskValue === "") {
+        alert("Please add a task!");
+        return;
+      }
+
+      let taskList = document.createElement("div")
+      taskList.classList.add("taskList")
+
+      // Create a new task container
+      let taskLabel = document.createElement("div");
+      taskLabel.classList.add("taskLabel");
+
+      // Create the checkbox and task description
+      let checkbox = document.createElement("input");
+      checkbox.type = "checkbox";
+
+      let newTask = document.createElement("div");
+      newTask.classList.add("newTask");
+      newTask.textContent = taskValue;
+
+      // Append checkbox and task text to taskLabel
+      taskLabel.appendChild(checkbox);
+      taskLabel.appendChild(newTask);
+
+      // Create another task container for date and completion button
+      let taskLabelDate = document.createElement("div");
+      taskLabelDate.classList.add("taskLabel");
+
+      let newDate = document.createElement("div");
+      newDate.classList.add("newDate");
+      newDate.textContent = dateValue;
+
+      let crossBtn = document.createElement("button");
+      crossBtn.classList.add("cross");
+      crossBtn.textContent = "Completed";
+
+      crossBtn.onclick = function () {
+        taskList.remove();
+      };
+
+      taskLabelDate.appendChild(newDate);
+      taskLabelDate.appendChild(crossBtn);
+
+      // Append both taskLabel and taskLabelDate to the taskList
+      taskList.appendChild(taskLabel);
+      taskList.appendChild(taskLabelDate);
+
+      box.appendChild(taskList);
+
+      // Clear the input fields after adding the task
+      document.querySelector("#task").value = "";
+      document.querySelector("#date").value = "";
+    
+    });
+  </script>
+</html>
