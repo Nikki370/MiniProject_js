@@ -1,0 +1,341 @@
+/* ===== RESET & BASE ===== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #0e0e0e;
+  --surface: #1a1a1a;
+  --surface2: #222222;
+  --border: rgba(255, 255, 255, 0.08);
+  --text: #f0f0f0;
+  --muted: rgba(255, 255, 255, 0.4);
+  --story-size: 64px;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+/* ===== HEADER ===== */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 20px 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+header h1 {
+  font-size: 26px;
+  font-weight: 600;
+  background: linear-gradient(135deg, #ff6b6b, #ffa94d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+header span {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* ===== STORY TRAY ===== */
+.tray {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.tray::-webkit-scrollbar {
+  display: none;
+}
+
+/* Each bubble (+ button or story) */
+.story-bubble {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: transform 0.15s ease;
+}
+
+.story-bubble:active {
+  transform: scale(0.92);
+}
+
+/* Gradient ring for unseen stories */
+.bubble-ring {
+  width: var(--story-size);
+  height: var(--story-size);
+  border-radius: 50%;
+  padding: 3px;
+  background: linear-gradient(135deg, #ff6b6b, #ffa94d, #f857a6);
+}
+
+/* Grey ring for seen stories */
+.bubble-ring.seen {
+  background: var(--surface2);
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  padding: 2px;
+}
+
+/* The + add button ring */
+.bubble-ring.add-btn {
+  background: var(--surface2);
+  border: 2px dashed rgba(255, 255, 255, 0.25);
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Inner circle (white background + image) */
+.bubble-inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: var(--surface);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bubble-inner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.add-icon {
+  font-size: 28px;
+  color: var(--muted);
+  line-height: 1;
+}
+
+.bubble-label {
+  font-size: 11px;
+  color: var(--muted);
+  max-width: var(--story-size);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+}
+
+/* ===== FEED EMPTY STATE ===== */
+.feed {
+  padding: 20px;
+}
+
+.feed-empty {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--muted);
+}
+
+.feed-empty h2 {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: var(--text);
+}
+
+.feed-empty p {
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* ===== HIDE FILE INPUT ===== */
+#file-input {
+  display: none;
+}
+
+/* ===== STORY VIEWER ===== */
+.viewer {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: #000;
+  display: flex;
+  flex-direction: column;
+
+  /* Hidden by default */
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+/* When .open class is added by JS */
+.viewer.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* ===== PROGRESS BARS ===== */
+.progress-track {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  display: flex;
+  gap: 4px;
+  padding: 12px 12px 0;
+}
+
+.progress-seg {
+  flex: 1;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: #fff;
+  width: 0%;
+  border-radius: 3px;
+}
+
+.progress-fill.done {
+  width: 100%;
+}
+
+/* ===== CLOSE BUTTON ===== */
+.viewer-close {
+  position: absolute;
+  top: 28px;
+  right: 16px;
+  z-index: 11;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 26px;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity 0.15s;
+}
+
+.viewer-close:hover {
+  opacity: 1;
+}
+
+/* ===== STORY IMAGE ===== */
+.viewer-img-wrap {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.viewer-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Tap zones (invisible, clickable areas) */
+.tap-prev,
+.tap-next {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 40%;
+  z-index: 5;
+  cursor: pointer;
+}
+
+.tap-prev { left: 0; }
+.tap-next { right: 0; }
+
+/* ===== VIEWER FOOTER ===== */
+.viewer-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 60px 20px 32px;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+  z-index: 10;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.viewer-time {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.viewer-delete {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.viewer-delete:hover {
+  background: rgba(255, 60, 60, 0.35);
+}
+
+/* ===== TOAST ===== */
+.toast {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 10px 20px;
+  border-radius: 100px;
+  font-size: 13px;
+  opacity: 0;
+  transition: all 0.25s ease;
+  z-index: 200;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (min-width: 600px) {
+  :root {
+    --story-size: 72px;
+  }
+
+  body {
+    max-width: 480px;
+    margin: 0 auto;
+    border-left: 1px solid var(--border);
+    border-right: 1px solid var(--border);
+  }
+
+  .viewer {
+    max-width: 480px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}

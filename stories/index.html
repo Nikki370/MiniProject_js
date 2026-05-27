@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stories</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>Stories</h1>
+    <span id="story-count">0 stories</span>
+  </header>
+
+  <!-- Story Tray (the bubble row at top) -->
+  <div class="tray" id="tray">
+
+    <!-- Add (+) button — always first -->
+    <div class="story-bubble" id="add-bubble">
+      <div class="bubble-ring add-btn">
+        <span class="add-icon">+</span>
+      </div>
+      <span class="bubble-label">Add</span>
+    </div>
+
+    <!-- Story bubbles will be added here by JS -->
+
+  </div>
+
+  <!-- Main feed area -->
+  <div class="feed">
+    <div class="feed-empty" id="feed-empty">
+      <h2>No stories yet</h2>
+      <p>Tap the <strong>+</strong> button to add your first story.<br/>It disappears after 24 hours.</p>
+    </div>
+  </div>
+
+  <!-- Hidden file input (clicking + triggers this) -->
+  <input type="file" id="file-input" accept="image/*" />
+
+  <!-- ===== STORY VIEWER OVERLAY ===== -->
+  <div class="viewer" id="viewer">
+
+    <!-- Progress bars at top -->
+    <div class="progress-track" id="progress-track"></div>
+
+    <!-- Close button -->
+    <button class="viewer-close" id="viewer-close">&#x2715;</button>
+
+    <!-- Story image + tap zones -->
+    <div class="viewer-img-wrap">
+      <div class="tap-prev" id="tap-prev"></div>
+      <img class="viewer-img" id="viewer-img" src="" alt="Story" />
+      <div class="tap-next" id="tap-next"></div>
+    </div>
+
+    <!-- Bottom info bar -->
+    <div class="viewer-footer">
+      <div class="viewer-time" id="viewer-time"></div>
+      <button class="viewer-delete" id="viewer-delete">🗑 Delete</button>
+    </div>
+
+  </div>
+
+  <!-- Toast notification -->
+  <div class="toast" id="toast"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
